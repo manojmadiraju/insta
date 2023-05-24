@@ -1,0 +1,111 @@
+1  amazon-linux-extras install ansible2 -y
+    2  yum install python pyhton-level python-pip -y
+    3  passwd root
+    4  vi /etc/ssh/sshd_config 
+    5  systemctl restart sshd
+    6  ls -al
+    7  cd .ssh
+    8  ll
+    9  ssh-keygen
+   10  ls .ssh
+   11  ll
+   12  ssh-copy-id root@172.31.9.118
+   13  ssh-copy-id rot@172.31.12.13
+   14  ssh-copy-id root@172.31.12.13
+   15  vi /etc/ansible/hosts
+   16  vi /etc/ansible/ansible.cfg
+   17  ansible all --lists-hosts
+   18  ansible all --list--hosts
+   19  ansible all --list-hosts
+   20  ansible all -m ping
+   21  vim one.yml
+   22  ansible-playbook one.yml
+   23  vim two.tml
+   24  vim two.yml
+   25  ansible-playbook two.yml
+   26  vim two.yml
+   27  ansible-playbook two.yml
+   28  vim three.yml
+   29  ansible-playbook third.yml
+   30  ansible-playbook three.yml
+   31  cd 
+   32  vim three.yml
+   33  ansible-playbook three.yml
+   34  history
+
+amazon-linux-extras install ansible2 -y
+    2  yum install python python-pip python-level -y
+    3  passwd root
+    4  vi /etc/ssh/sshd_config
+    5  systemctl restart sshd
+    6  ssh-keygen
+    7  ssh-copy-id root@172.31.14.73
+    8  ssh-copy-id root@172.31.15.164
+    9  vi /etc/ansible/hosts
+   10  vi /etc/ansible/ansible.cfg 
+   11  ansible all -m ping
+   12  vim one.yml
+   13  ansible-playbook one.yml
+   14  vim one.yml
+   15  ansible-playbook one.yml
+   16  vim one.yml
+   17  ansible-playbook one.yml
+   18  vim one.yml
+   19  ansible-playbook one.yml
+   20  vim two.yml
+   21  ansible-playbook two.yml
+   22  vim two.yml
+   23  ansible-playbook two.yml
+   24  vim two.yml
+   25  ansible-playbook two.yml
+   26  vim two.yml
+   27  ansible-playbook two.yml
+   28  ansible-playbook two.yml --extras-vars "abc=tree"
+   29  ansible-playbook two.yml --extra-vars "abc=tree"
+   30  ansible-playbook two.yml --extra-vars "abc=git"
+   31  ansible-playbook two.yml --extra-vars "abc=java-1.8.0-openjdk"
+   32  vim two.yml
+   33  ansible-playbook two.yml --extra-vars "abc=java-1.8.0-openjdk xyz=tree"
+   34  rm -rf *
+   35  ll
+   36  vim one.yml
+   37  vim two.yml
+   38  vim one.yml
+   39  ansible-playbook two.yml
+   40  yum install httpd -y
+   41  systemctl status httpd
+   42  systemctl start httpd
+   43  cd /var/www/html
+   44  ll
+   45  vim index.html
+   46  cd 
+   47  vim webserver.yml
+   48  ansiblee-playbook webserver.yml
+   49  ansible-playbook webserver.yml
+   50  vim handlers.yml
+   51  ansible-playbook handlers.yml
+   52  vim handlers.yml
+   53  ansible-playbook handlers.yml
+   54  vim handlers.yml
+   55  ansible-playbook handlers.yml
+   56  git --version
+
+we can access the variables by giving it in '{{ }}' syntax.
+
+in second we discussed about the playbooks - action,yum,command
+and giving variables in three ways-- direct way in the playbook the second section for ex abc=git
+ second way --run time by using the --extra-vars "abc=git" and ansible-playbook example.yml --extra-vars "abc=git xyz=maven"
+third way -->code oka playbook lo and varibale inko dantlo and we can connect both by writing setfact in playbook and include section in other playbook.
+
+We have to install httpd the webserver
+yum install httpd -y
+we have to have ssh and all traffic or ssh and allow http option in the security group : port numbr is 80
+
+/var/www/html - we have write the program in this path
+and wrirting playbook to install the httpd in slave servers.
+
+Handlers: is same as the tasks but it will run when they are called by any other tasks.
+we have to notify to other task that the first task is completed to perform the second task will be done by using handlers section in playbook.
+notify in action (steps included and it has to be in tasks) and below tasks there has to be handlers name in handlers and notify in action should be identical.
+
+and to insatll in localserver we have to use local host in host place.
